@@ -12,16 +12,14 @@ body {
 .slider {
   position: absolute;
   margin: 0 auto;
-  top: 50%;
+  top: 20%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -20%);
   width: 1000px;
   height: 750px;
   overflow: hidden;
  
 }
-
-
 
 .label-container {
   display: flex;
@@ -52,7 +50,7 @@ body {
   top: 30px;
   width: 20px;
   height: 20px;
-  transition: all 4.5s ease-out;
+  transition: all 1.5s ease-out;
   border-radius: 50%;
 }
 
@@ -86,12 +84,33 @@ input {
 }
 
 figcaption {
-  padding-top: 75px;
+  padding-top: 95px;
   font-family: Arial, sans-serif;
-  font-size: 25px;
+  font-size: 45px;
   font-weight: 700;
   font-style: italic;
   color: #021359e0;
+}
+
+.text {
+  display: inline-block;
+  animation: move 4s ease-in-out infinite;
+}
+
+.text:hover {
+  cursor: default;
+}
+
+@keyframes move {
+  0% {
+      transform: translate(0%, 0);
+  }
+  50% {
+      text-shadow: 0 25px 50px;
+  }
+  70% {
+      transform: translate(30%, 0);
+  }
 }
 
 #ch1:checked~ .s1 {
@@ -111,39 +130,24 @@ figcaption {
 }
 
 
-#ch1:checked~ .bar:hover.active {
+#ch1:checked~ .label-container .l1 {
   border: 3px solid #fff;
   background-color: #00ffff;
 }
 
-#ch2:checked~ .bar:hover.active {
+#ch2:checked~ .label-container .l2 {
   border: 3px solid #fff;
   background-color: #00ffff;
 }
 
-#ch3:checked~ .bar.active {
+#ch3:checked~ .label-container .l3 {
   border: 3px solid #fff;
   background-color: #00ffff;
 }
 
-#ch4:checked~ .bar.active {
+#ch4:checked~ .label-container .l4 {
   border: 3px solid #fff;
   background-color: #00ffff;
 }
 
 
-#ch1:checked~ .t1 {
-  margin-left: 0;
-}
-
-#ch2:checked~ .t1 {
-  margin-left: -25%;
-}
-
-#ch3:checked~ .t1 {
-  margin-left: -50%;
-}
-
-#ch4:checked~ .t1 {
-  margin-left: -75%;
-}
